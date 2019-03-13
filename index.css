@@ -47,7 +47,7 @@ border-spacing: 0;
 
 header {
     max-height: 10vh;
-    margin-bottom: 20px;
+    margin: 5px auto 20px auto;
     padding: 0px 10vw;
     display: flex;
     flex-direction: row;
@@ -128,6 +128,7 @@ header nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -166,4 +167,14 @@ header nav {
     visibility: visible;
     opacity: 1;
     transition: 0.4s all ease;
+}
+
+@media (max-width: 500px) {
+    header img {
+        width: 100px;
+    }    
+
+    header nav {
+        font-size: 20px;
+    }
 }
