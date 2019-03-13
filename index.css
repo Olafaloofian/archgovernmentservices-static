@@ -47,8 +47,8 @@ border-spacing: 0;
 
 header {
     max-height: 10vh;
-    margin: 5px auto 20px auto;
-    padding: 0px 10vw;
+    margin: 7px 10px 20px 10px;
+    padding: 0 10vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -68,7 +68,7 @@ header nav {
 }
 
 #landing-content{
-    width: 80vw;
+    width: calc(80vw - 20px);
     min-height: 90vh;
     padding-bottom: 20vh;
     display: flex;
@@ -176,5 +176,19 @@ header nav {
 
     header nav {
         font-size: 20px;
+    }
+
+    #subtitle {
+        font-size: 15px;
+        padding: 15px 25px;
+        margin-bottom: 25px;
+    }
+
+    #landing-content {
+        padding-bottom: 0;
+    }
+
+    #navigation-panels figure {
+        margin: 0 0 16px 0;
     }
 }
