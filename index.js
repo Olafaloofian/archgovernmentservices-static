@@ -1,9 +1,12 @@
 window.onload = function() {
+    // Check the URL on load to see if user requested a specific panel
     if(window.location.href.split('#').length > 1) {
         const panel =  document.getElementById(window.location.href.split('#')[1])
         if(panel) {
+            // The panel exists, scroll it into view
             panel.scrollIntoView()
         } else {
+            // The panel does not exist
             window.history.replaceState({location: ''}, 'home', ' ')
         }
     } else {
@@ -14,16 +17,17 @@ window.onload = function() {
 let ticking = false
 
 window.addEventListener('scroll', function(e) {
+    // Prevent backlog spam of scroll function by timing it out 300 ms based on a ticker
     if (!ticking) {
         setTimeout(() => {
             detectScrollPosition();
-            ticking = false;
-            
+            ticking = false;   
         }, 300)
         ticking = true;
     }
 })
 
+// Alters the class of a chose element to do a fade-in and fade-out animation
 function toggleVisibility(element, toggle) {
     const chosenElement = document.getElementById(element)
 	if (chosenElement.classList) {
@@ -45,6 +49,7 @@ function toggleVisibility(element, toggle) {
 	}
 }
 
+// Responsible for changing the URL path as the user scrolls through the page
 function detectScrollPosition() {
     if(window.pageYOffset === 0) {
         toggleVisibility('up-arrow', 'hide')
