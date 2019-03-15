@@ -131,6 +131,7 @@ header nav {
     width: 35vh;
     max-width: 350px;
     height: 50vh;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -228,7 +229,7 @@ header nav {
         padding-bottom: 0;
     }
 
-    #navigation-panels figure {
+    #navigation-panels a figure {
         margin: 0 0 16px 0;
     }
     .up-arrow {
