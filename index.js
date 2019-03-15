@@ -1,3 +1,29 @@
+window.onload = function() {
+    if(window.location.href.split('#').length > 1) {
+        const panel =  document.getElementById(window.location.href.split('#')[1])
+        if(panel) {
+            panel.scrollIntoView()
+        } else {
+            window.history.replaceState({location: ''}, 'home', ' ')
+        }
+    } else {
+        detectScrollPosition()
+    }
+}
+
+let ticking = false
+
+window.addEventListener('scroll', function(e) {
+    if (!ticking) {
+        setTimeout(() => {
+            detectScrollPosition();
+            ticking = false;
+            
+        }, 300)
+        ticking = true;
+    }
+})
+
 function toggleVisibility(element, toggle) {
     const chosenElement = document.getElementById(element)
 	if (chosenElement.classList) {
@@ -17,4 +43,22 @@ function toggleVisibility(element, toggle) {
             }
 		}
 	}
+}
+
+function detectScrollPosition() {
+    if(window.pageYOffset === 0) {
+        toggleVisibility('up-arrow', 'hide')
+    } else {
+        toggleVisibility('up-arrow', 'show')
+    }
+
+    if(window.pageYOffset >= 0 && window.pageYOffset < window.innerHeight) {
+        window.history.replaceState({location: ''}, 'home', ' ')
+    } else if(window.pageYOffset > window.innerHeight && window.pageYOffset < (window.innerHeight * 2)) {
+        window.history.replaceState({location: 'design-and-build-services'}, 'design-and-build-services', '#design-and-build-services')
+    } else if (window.pageYOffset > (window.innerHeight * 2) && window.pageYOffset < (window.innerHeight * 3)) {
+        window.history.replaceState({location: 'managed-services'}, 'managed-services', '#managed-services')
+    } else if (window.pageYOffset > (window.innerHeight * 3)) {
+        window.history.replaceState({location: 'procurement-and-logistics-services'}, 'procurement-and-logistics-services', '#procurement-and-logistics-services')
+    }
 }

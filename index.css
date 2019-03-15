@@ -19,6 +19,7 @@ font: inherit;
 vertical-align: baseline;
 box-sizing: border-box;
 font-family: 'Open Sans', sans-serif;
+scroll-behavior: smooth;
 }
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -93,6 +94,25 @@ header nav {
     text-align: center;
 }
 
+.up-arrow {
+    background: darkblue;
+    color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s all ease;
+}
+
 #navigation-panels {
     width: 100%;
     display: flex;
@@ -102,11 +122,15 @@ header nav {
     align-items: center;
 }
 
-#navigation-panels figure {
+#navigation-panels a {
+    margin: 0 auto;
+}
+
+#navigation-panels a figure {
     position: relative;
-    width: 350px;
-    height: 500px;
-    margin: 30px auto;
+    width: 35vh;
+    max-width: 350px;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,14 +139,14 @@ header nav {
     box-shadow: rgb(173, 173, 173) -3px 3px 10px
 }
 
-#navigation-panels figure img {
+#navigation-panels a figure img {
     height: 100%;
     width: auto;
 }
 
-#navigation-panels figure div {
+#navigation-panels a figure div {
     font-size: 22px;
-    width: 500px;
+    width: 50vh;
     height: 50px;
     display: flex;
     flex-direction: row;
@@ -169,6 +193,22 @@ header nav {
     transition: 0.4s all ease;
 }
 
+.panel {
+    height: 100vh;
+}
+
+#design-and-build-services {
+    background: lightblue;
+}
+
+#managed-services {
+    background: blue;
+}
+
+#procurement-and-logistics-services {
+    background: grey;
+}
+
 @media (max-width: 500px) {
     header img {
         width: 100px;
@@ -190,5 +230,17 @@ header nav {
 
     #navigation-panels figure {
         margin: 0 0 16px 0;
+    }
+    .up-arrow {
+        height: 40px;
+        width: 40px;
+        margin: 10px;
+        font-size: 13px
+    }
+}
+
+@media (max-height: 700px) {
+    #navigation-panels a figure div {
+        font-size: 15px;
     }
 }
