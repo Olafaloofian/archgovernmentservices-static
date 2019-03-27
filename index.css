@@ -237,7 +237,7 @@ header nav {
 
 .panel .info-card {
     height: 90%;
-    max-width: 35vw;
+    max-width: 655px;
     flex: 2;
     margin: 2%;
 }
