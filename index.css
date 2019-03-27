@@ -84,7 +84,7 @@ header nav {
     font-size: 19px;
     margin: 10px auto;
     padding: 4vh 50px;
-    background: #4472c4;
+    background: rgba(40, 52, 74, 0.719);
     color: white;
     border-radius: 9px;
     display: flex;
@@ -126,7 +126,7 @@ header nav {
     margin: 0 auto;
 }
 
-#navigation-panels a figure {
+.info-card {
     position: relative;
     width: 35vh;
     max-width: 350px;
@@ -140,13 +140,14 @@ header nav {
     box-shadow: rgb(173, 173, 173) -3px 3px 10px
 }
 
-#navigation-panels a figure img {
+.info-card img {
     height: 100%;
     width: auto;
 }
 
-#navigation-panels a figure div {
-    font-size: 22px;
+.info-card div {
+    font-size: 25px;
+    letter-spacing: 0.03em;
     width: 50vh;
     height: 50px;
     display: flex;
@@ -157,10 +158,21 @@ header nav {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(128, 128, 128, 0.233);
     color: white;
     transform-origin: 0 0;
     transform: translate(50px) rotate(90deg);
+}
+
+.lightgrey {
+    background: rgba(121, 121, 121, 0.425);
+}
+
+.mediumgrey {
+    background: rgba(128, 128, 128, 0.562);
+}
+
+.darkgrey {
+    background: rgba(128, 128, 128, 0.678);
 }
 
 #contact {
@@ -188,6 +200,22 @@ header nav {
     transition: 0.4s all ease;
 }
 
+.contact-links a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+.contact-links a:hover {
+    background:#aabfe2;
+}
+
 .visible {
     visibility: visible;
     opacity: 1;
@@ -196,19 +224,40 @@ header nav {
 
 .panel {
     height: 100vh;
+    font-size: calc(1.3vh + 0.8vw);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-#design-and-build-services {
-    background: lightblue;
+.line-spacer {
+    height: 1.5em;
 }
 
-#managed-services {
+.panel .info-card {
+    height: 90%;
+    max-width: 35vw;
+    flex: 2;
+    margin: 2%;
+}
+
+.panel .info-card div {
+    width: 90vh;
+}
+
+.panel article {
+    flex: 3;
+    padding: 2% 2% 2% 0;
+}
+
+/* #managed-services {
     background: blue;
 }
 
 #procurement-and-logistics-services {
     background: grey;
-}
+} */
 
 @media (max-width: 500px) {
     header img {
