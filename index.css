@@ -81,10 +81,10 @@ header nav {
 
 #subtitle {
     width: 100%;
-    font-size: 19px;
+    font-size: 26px;
     margin: 10px auto;
     padding: 4vh 50px;
-    background: rgba(40, 52, 74, 0.719);
+    background: #28344A;
     color: white;
     border-radius: 9px;
     display: flex;
