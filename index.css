@@ -191,7 +191,7 @@ header nav {
     z-index: 2;
     right: -5px;
     width: 200px;
-    height: 100px;
+    min-height: 100px;
     border-radius: 9px;
     color: white;
     font-size: 19px;
