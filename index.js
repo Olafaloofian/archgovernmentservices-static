@@ -1,4 +1,7 @@
 window.onload = function() {
+    // Add current year to copyright
+    const today = new Date
+    document.getElementById('year').innerHTML = `${today.getFullYear()}`
     // Check the URL on load to see if user requested a specific panel
     if(window.location.href.split('#').length > 1) {
         const panel =  document.getElementById(window.location.href.split('#')[1])
@@ -27,7 +30,7 @@ window.addEventListener('scroll', function(e) {
     }
 })
 
-// Alters the class of a chose element to do a fade-in and fade-out animation
+// Alters the class of a chosen element to do a fade-in and fade-out animation
 function toggleVisibility(element, toggle) {
     const chosenElement = document.getElementById(element)
 	if (chosenElement.classList) {

@@ -95,7 +95,7 @@ header nav {
 }
 
 .up-arrow {
-    background: darkblue;
+    background: #28344A;
     color: white;
     height: 50px;
     width: 50px;
@@ -237,7 +237,7 @@ header nav {
 
 .panel .info-card {
     height: 90%;
-    max-width: 35vw;
+    max-width: 615px;
     flex: 2;
     margin: 2%;
 }
@@ -251,13 +251,16 @@ header nav {
     padding: 2% 2% 2% 0;
 }
 
-/* #managed-services {
-    background: blue;
+footer {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
 }
 
-#procurement-and-logistics-services {
-    background: grey;
-} */
+footer a {
+    color: black;
+    margin-right: 5px;
+}
 
 @media (max-width: 500px) {
     header img {
